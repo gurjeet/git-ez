@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+function info() { _log INFO "$@" >&1; }
+
+function warn() { _log WARN "$@" >&2; }
+
+function error() { _log ERROR "$@" >&2 exit 1; }
+
+function panic()
+{
+    _log ERROR "$@" >&2
+    exit 2
+}
+
+function _log()
+{
+    level="$1"
+    shift
+    echo "$level: $@"
+}
+
+function create_repo()
+{
+    echo Create Repository
+}
+
+function download_repo()
+{
+    echo Download Repository
+}
+
+function create_branch()
+{
+    echo
+}
+
+
+
